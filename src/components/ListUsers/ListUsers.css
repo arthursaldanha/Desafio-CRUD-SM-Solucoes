@@ -1,0 +1,15 @@
+.content-list-users {
+   min-height: calc(100vh - 130px);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.wrapper-cards {
+   max-width: 1000px;
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: center;
+   align-items: center;
+}
