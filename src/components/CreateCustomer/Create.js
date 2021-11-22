@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import CustomerForm from "../CustomerForm/Form";
 import { useHistory } from "react-router-dom";
+import { FiArrowLeft } from "react-icons/fi";
 
 import "./Create.css";
 
@@ -33,11 +34,13 @@ const CreateCustomer = () => {
       <CustomerForm
         firstLabel="Nome:"
         secLabel="Email:"
+        pathBack={() => {history.goBack()}}
         nameButton="Cadastrar"
         initialValues={formValues}
         onSubmit={onSubmit}
         enableReinitialize
       />
+      <button className="button-back" onClick={() => {history.goBack()}}><FiArrowLeft />Voltar</button>
     </div>
   );
 };

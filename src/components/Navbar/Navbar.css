@@ -85,11 +85,6 @@
   border-bottom: 3px solid #fff;
 }
 
-.navbar-menu ul li a:focus {
-  color: #e0e0e0;
-  border-bottom: 3px solid #fff;
-}
-
 @media only screen and (max-width: 600px) {
   .navbar-menu ul li a {
     width: 100%;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CustomerForm from "../CustomerForm/Form";
 import { useHistory, useParams } from "react-router-dom";
+import { FiArrowLeft } from "react-icons/fi";
 
 import "./Update.css";
 
@@ -56,6 +57,7 @@ const UpdateCustomer = () => {
         onSubmit={onSubmit}
         enableReinitialize
       />
+      <button className="button-back" onClick={() => {history.goBack()}}><FiArrowLeft />Voltar</button>
     </div>
   );
 };

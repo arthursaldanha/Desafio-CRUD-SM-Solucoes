@@ -36,7 +36,7 @@ const Navbar = () => {
             {routes.map(({ id, text, path }) => {
               return (
                 <li key={id}>
-                  <Link to={path}>
+                  <Link to={path} onClick={handleClickedMenu}>
                     {text}
                   </Link>
                 </li>
