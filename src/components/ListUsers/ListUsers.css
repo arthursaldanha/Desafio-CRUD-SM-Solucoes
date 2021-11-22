@@ -1,5 +1,6 @@
 .content-list-users {
-   min-height: calc(100vh - 130px);
+   min-height: calc(100vh - 50px);
+   padding-top: 80px;
    display: flex;
    flex-direction: column;
    justify-content: center;

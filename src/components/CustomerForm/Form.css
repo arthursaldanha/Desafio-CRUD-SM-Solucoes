@@ -1,5 +1,13 @@
+.form-wrapper {
+  width: 100%;
+  max-width: 370px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .form-wrapper form {
-  width: 350px;
+  width: calc(100% - 20px);
   display: flex;
   flex-direction: column;
 }

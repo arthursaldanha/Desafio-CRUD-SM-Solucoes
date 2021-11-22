@@ -13,7 +13,6 @@ const Navbar = () => {
   const [menuVisible, setMenuVisible] = useState(false);
 
   const handleClickedMenu = () => {
-    window.scrollTo(0, 0);
     setMenuVisible(!menuVisible);
   };
 

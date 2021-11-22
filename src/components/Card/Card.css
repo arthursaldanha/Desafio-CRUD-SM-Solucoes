@@ -13,7 +13,7 @@
 .image-card img {
    border-radius: 50%;
    border: 2px solid #76C893;
-   margin-bottom: 10px;
+   margin-bottom: 10px 0;
 }
 
 .name-card h2 {

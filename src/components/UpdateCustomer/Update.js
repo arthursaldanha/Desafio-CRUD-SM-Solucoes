@@ -35,7 +35,7 @@ const UpdateCustomer = () => {
     setLoading(true)
     const response = await axios.get("https://reqres.in/api/users/" + id)
     const { email, first_name, last_name } = response.data.data;
-    const name = first_name + " " + last_name;
+    const name = `${first_name} ${last_name}`;
     setFormValues({ name, email });
     setLoading(false)
   }
