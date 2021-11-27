@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../../assets/images/logo.svg";
 
 // Styles
-import "./Navbar.css";
+import * as S from "./Styled.js";
 
 // Content
 import { routes } from "./content";
@@ -16,36 +15,47 @@ const Navbar = () => {
     setMenuVisible(!menuVisible);
   };
 
-  window.addEventListener('resize', function () {
+  const onCLoseMenu = () => {
+    if ((window.innerWidth <= 600) && (menuVisible === true)) {
+      handleClickedMenu();
+    }
+  }
+
+  window.addEventListener("resize", function () {
     if (window.innerWidth > 600) setMenuVisible(false);
   });
 
+  const Navbar = menuVisible ? S.NavbarMenuActive : S.NavbarMenu;
+  const UnorderedList = menuVisible ? S.MenuUnorderedListActive : S.MenuUnorderedList; 
+  const NavbarLink = menuVisible ? S.NavbarLinkActive : S.NavbarLink;
+
   return (
-    <div className="navbar">
-      <div className="container-navbar">
-        <div className="navbar-logo">
-          <Link to="/">
-            <img src={logo} alt="logo" />
-          </Link>
-        </div>
-        <div className="menu-icon" onClick={handleClickedMenu}>
+    <S.Navbar>
+      <S.ContainerNavbar>
+        <S.NavbarLogo>
+          <S.NavLink to="/">
+            <S.Logo src={logo} alt="logo" />
+          </S.NavLink>
+        </S.NavbarLogo>
+        <S.MenuIcon onClick={handleClickedMenu}>
           {menuVisible ? <FaTimes /> : <FaBars />}
-        </div>
-        <div className={`navbar-menu ${menuVisible ? "active" : ""}`}>
-          <ul>
+        </S.MenuIcon>
+        <Navbar>
+          <S.MenuList>
             {routes.map(({ id, text, path }) => {
               return (
-                <li key={id}>
-                  <Link to={path} onClick={handleClickedMenu}>
+                <UnorderedList key={id}>
+                  <NavbarLink to={path} onClick={onCLoseMenu}>
+                    {console.log(menuVisible)}
                     {text}
-                  </Link>
-                </li>
+                  </NavbarLink>
+                </UnorderedList>
               );
             })}
-          </ul>
-        </div>
-      </div>
-    </div>
+          </S.MenuList>
+        </Navbar>
+      </S.ContainerNavbar>
+    </S.Navbar>
   );
 };
 

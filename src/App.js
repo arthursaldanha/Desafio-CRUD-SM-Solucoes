@@ -1,5 +1,3 @@
-import './App.css';
-
 //Components
 import Routes from './routes'
 

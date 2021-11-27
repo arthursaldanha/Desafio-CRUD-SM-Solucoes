@@ -1,28 +1,26 @@
 import React from "react";
-import { GoPencil } from "react-icons/go"
-import { Link } from "react-router-dom";
 
-// Styles
-import "./Card.css";
+// Style
+import * as S from "./Styled.js";
 
 const Card = ({ id, email, firstName, lastName, avatar, alt }) => {
   return (
-    <div className="container-card">
-      <div className="image-card">
-        <img src={avatar} alt={alt}/>
-      </div>
-      <div className="name-card">
-        <h2>{`${firstName} ${lastName}`}</h2>
-      </div>
-      <div className="email-card">
-        <span>{email}</span>
-      </div>
-      <div className="edit-pencil-card">
-        <Link to={`/atualizar-cliente/${id}`}>
-          <GoPencil />
-        </Link>
-      </div>
-    </div>
+    <S.ContainerCard>
+      <S.ImageCard>
+        <S.Image src={avatar} alt={alt} />
+      </S.ImageCard>
+      <S.NameCard>
+        <S.Name>{`${firstName} ${lastName}`}</S.Name>
+      </S.NameCard>
+      <S.EmailCard>
+        <S.Email>{email}</S.Email>
+      </S.EmailCard>
+      <S.EditPencilCard>
+        <S.NavLink to={`/atualizar-cliente/${id}`}>
+          <S.Pencil />
+        </S.NavLink>
+      </S.EditPencilCard>
+    </S.ContainerCard>
   );
 };
 

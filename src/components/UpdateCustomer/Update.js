@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CustomerForm from "../CustomerForm/Form";
 import { useHistory, useParams } from "react-router-dom";
-import { FiArrowLeft } from "react-icons/fi";
 
-import "./Update.css";
+// Styles
+import * as S from "./Styled.js";
 
 // Components
 import Loading from "../Loading/Loading";
@@ -26,20 +26,20 @@ const UpdateCustomer = () => {
           alert("Cliente atualizado com sucesso!");
         } else {
           Promise.reject();
-          alert("Algo de errado aconteceu! Tente novamente mais tarde!")
+          alert("Algo de errado aconteceu! Tente novamente mais tarde!");
           history.push("/");
         }
-      })
+      });
   };
 
   const fetchInputData = async () => {
-    setLoading(true)
-    const response = await axios.get("https://reqres.in/api/users/" + id)
+    setLoading(true);
+    const response = await axios.get("https://reqres.in/api/users/" + id);
     const { email, first_name, last_name } = response.data.data;
     const name = `${first_name} ${last_name}`;
     setFormValues({ name, email });
-    setLoading(false)
-  }
+    setLoading(false);
+  };
 
   useEffect(() => {
     fetchInputData();
@@ -47,7 +47,7 @@ const UpdateCustomer = () => {
   }, [id]);
 
   return (
-    <div className="update-customer">
+    <S.UpdateCustomer>
       {loading && <Loading />}
       <CustomerForm
         firstLabel="Nome:"
@@ -57,8 +57,15 @@ const UpdateCustomer = () => {
         onSubmit={onSubmit}
         enableReinitialize
       />
-      <button className="button-back" onClick={() => {history.goBack()}}><FiArrowLeft />Voltar</button>
-    </div>
+      <S.ButtonBack
+        onClick={() => {
+          history.goBack();
+        }}
+      >
+        <S.ArrowLeft />
+        Voltar
+      </S.ButtonBack>
+    </S.UpdateCustomer>
   );
 };
 

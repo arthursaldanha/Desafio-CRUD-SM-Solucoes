@@ -1,6 +1,7 @@
-*, 
-*::after, 
-*::before {
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyles = createGlobalStyle`
+*, *::after, *::before {
 	font-size: 62,5%;
 	padding: 0;
 	border: 0;
@@ -11,6 +12,7 @@
 html, body, #root {
    min-height: 100vh;
    width: 100%;
+	font-family: "Poppins";
 }
 
 html, body, div, span, applet, object, iframe,
@@ -56,3 +58,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+`;
+
+export default GlobalStyles;

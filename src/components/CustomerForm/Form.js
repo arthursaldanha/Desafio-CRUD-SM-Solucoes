@@ -1,9 +1,8 @@
 import React from "react";
 import * as Yup from "yup";
-import { Formik, Form, Field, ErrorMessage } from "formik";
 
 // Styles
-import "./Form.css";
+import * as S from "./Styled.js"
 
 const CustomerForm = ({ firstLabel, secLabel, nameButton, ...restProps }) => {
   const validationSchema = Yup.object().shape({
@@ -30,51 +29,51 @@ const CustomerForm = ({ firstLabel, secLabel, nameButton, ...restProps }) => {
   };
 
   return (
-    <div className="form-wrapper">
-      <Formik {...restProps} validationSchema={validationSchema}>
+    <S.ContainerForm>
+      <S.FORMIK {...restProps} validationSchema={validationSchema}>
         {({ isValid, dirty }) => {
           return (
-            <Form>
-              <label htmlFor="name">
-                <span>{firstLabel}</span>
-                <Field
+            <S.FORM>
+              <S.Label htmlFor="name">
+                <S.TitleField>{firstLabel}</S.TitleField>
+                <S.FIELD
                   name="name"
                   type="text"
                   validate={validateName}
                   className="form-control"
                 />
-                <ErrorMessage
+                <S.ERRORMESSAGE
                   name="name"
                   component="span"
                   className="input-error"
                 />
-              </label>
-              <label htmlFor="email">
-                <span>{secLabel}</span>
-                <Field
+              </S.Label>
+              <S.Label htmlFor="email">
+                <S.TitleField>{secLabel}</S.TitleField>
+                <S.FIELD
                   name="email"
                   type="text"
                   validate={validateEmail}
                   className="form-control"
                 />
-                <ErrorMessage
+                <S.ERRORMESSAGE
                   name="email"
                   component="span"
                   className="input-error"
                 />
-              </label>
-              <button
+              </S.Label>
+              <S.ButtonForm
                 disabled={!(isValid && dirty)}
                 className="button-form"
                 type="submit"
               >
                 {nameButton}
-              </button>
-            </Form>
+              </S.ButtonForm>
+            </S.FORM>
           );
         }}
-      </Formik>
-    </div>
+      </S.FORMIK>
+    </S.ContainerForm>
   );
 };
 

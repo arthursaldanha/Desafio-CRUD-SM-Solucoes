@@ -1,15 +1,22 @@
-import { Link } from "react-router-dom";
-import './Footer.css'
+import React from "react";
+import * as S from "./Styled.js";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="container-footer">
-         <p>Criado e desenvoldido por <Link to={{pathname: "https://github.com/arthursaldanha"}} target="_blank">
-  Arthur Saldanha
-</Link>.</p>
-      </div>
-    </footer>
+    <S.Footer>
+      <S.ContainerFooter>
+        <S.TextFooter>
+          Criado e desenvoldido por{" "}
+          <S.NavLink
+            to={{ pathname: "https://github.com/arthursaldanha" }}
+            target="_blank"
+          >
+            Arthur Saldanha
+          </S.NavLink>
+          .
+        </S.TextFooter>
+      </S.ContainerFooter>
+    </S.Footer>
   );
 };
 

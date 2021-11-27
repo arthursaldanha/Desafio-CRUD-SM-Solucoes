@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 // Styles
-import "./ListUsers.css";
+import * as S from "./Styled.js";
 
 // Components
 import { Card, Loading } from "../index";
@@ -23,10 +23,10 @@ const ListUsers = () => {
   }, []);
 
   return (
-    <div className="content-list-users">
-      <div className="container-list-users">
+    <S.ListUsers>
+      <S.ContainerListUsers>
         {loading && <Loading />}
-        <div className="wrapper-cards">
+        <S.ContainerCards>
           {users.map(({ id, email, first_name, last_name, avatar }) => {
             return (
               <Card
@@ -40,9 +40,9 @@ const ListUsers = () => {
               />
             );
           })}
-        </div>
-      </div>
-    </div>
+        </S.ContainerCards>
+      </S.ContainerListUsers>
+    </S.ListUsers>
   );
 };
 
