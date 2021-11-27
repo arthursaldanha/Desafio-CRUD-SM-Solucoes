@@ -1,5 +1,5 @@
-import Home from "./Home/index";
-import Create from "./CreateCustomer/index"
-import Update from "./UpdateCustomer/index";
+import Home from './Home/index';
+import Create from './CreateCustomer/index';
+import Update from './UpdateCustomer/index';
 
-export { Home, Create, Update }
+export { Home, Create, Update };

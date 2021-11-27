@@ -1,21 +1,21 @@
-import React from "react";
-import * as Yup from "yup";
+import React from 'react';
+import * as Yup from 'yup';
 
 // Styles
-import * as S from "./Styled.js"
+import * as S from './Styled.js';
 
 const CustomerForm = ({ firstLabel, secLabel, nameButton, ...restProps }) => {
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required("Este campo é obrigatório!"),
+    name: Yup.string().required('Este campo é obrigatório!'),
     email: Yup.string()
-      .email("Por favor, insira um email válido!")
-      .required("Este campo é obrigatório!"),
+      .email('Por favor, insira um email válido!')
+      .required('Este campo é obrigatório!'),
   });
 
   const validateName = (value) => {
     let errorMessage;
     if (!/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\s]+$/gi.test(value)) {
-      errorMessage = "Por favor, insira o nome corretamente!";
+      errorMessage = 'Por favor, insira o nome corretamente!';
     }
     return errorMessage;
   };
@@ -23,7 +23,7 @@ const CustomerForm = ({ firstLabel, secLabel, nameButton, ...restProps }) => {
   const validateEmail = (value) => {
     let errorMessage;
     if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/gi.test(value)) {
-      errorMessage = "Por favor, insira um email válido!";
+      errorMessage = 'Por favor, insira um email válido!';
     }
     return errorMessage;
   };

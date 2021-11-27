@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import CustomerForm from "../CustomerForm/Form";
-import { useHistory, useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import CustomerForm from '../CustomerForm/Form';
+import { useHistory, useParams } from 'react-router-dom';
 
 // Styles
-import * as S from "./Styled.js";
+import * as S from './Styled.js';
 
 // Components
-import Loading from "../Loading/Loading";
+import Loading from '../Loading/Loading';
 
 const UpdateCustomer = () => {
   // eslint-disable-next-line
-  const [formValues, setFormValues] = useState({ name: "", email: "" });
+  const [formValues, setFormValues] = useState({ name: '', email: '' });
   const [loading, setLoading] = useState(false);
 
   let { id } = useParams();
@@ -19,22 +19,22 @@ const UpdateCustomer = () => {
 
   const onSubmit = (customertObject) => {
     axios
-      .put("https://reqres.in/api/users", customertObject)
+      .put('https://reqres.in/api/users', customertObject)
       .then((response) => {
         if (response.status === 200) {
-          history.push("/");
-          alert("Cliente atualizado com sucesso!");
+          history.push('/');
+          alert('Cliente atualizado com sucesso!');
         } else {
           Promise.reject();
-          alert("Algo de errado aconteceu! Tente novamente mais tarde!");
-          history.push("/");
+          alert('Algo de errado aconteceu! Tente novamente mais tarde!');
+          history.push('/');
         }
       });
   };
 
   const fetchInputData = async () => {
     setLoading(true);
-    const response = await axios.get("https://reqres.in/api/users/" + id);
+    const response = await axios.get('https://reqres.in/api/users/' + id);
     const { email, first_name, last_name } = response.data.data;
     const name = `${first_name} ${last_name}`;
     setFormValues({ name, email });

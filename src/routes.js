@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Pages
-import { Home, Create, Update } from "./pages/index";
+import { Home, Create, Update } from './pages/index';
 
 // Components
-import { Footer, Navbar } from "./components";
+import { Footer, Navbar } from './components';
 
 const Routes = () => {
   return (

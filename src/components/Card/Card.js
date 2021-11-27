@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 // Style
-import * as S from "./Styled.js";
+import * as S from './Styled.js';
 
 const Card = ({ id, email, firstName, lastName, avatar, alt }) => {
   return (

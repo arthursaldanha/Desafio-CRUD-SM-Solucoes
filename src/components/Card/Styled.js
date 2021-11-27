@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { GoPencil } from "react-icons/go";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { GoPencil } from 'react-icons/go';
+import { Link } from 'react-router-dom';
 
 export const ContainerCard = styled.div`
   align-items: center;

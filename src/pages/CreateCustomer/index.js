@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 // Components
-import { CreateCustomer } from "../../components";
+import { CreateCustomer } from '../../components';
 
 const Create = () => {
   return <CreateCustomer />;

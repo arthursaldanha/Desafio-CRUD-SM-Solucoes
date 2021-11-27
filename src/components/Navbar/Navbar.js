@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import logo from "../../assets/images/logo.svg";
+import React, { useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import logo from '../../assets/images/logo.svg';
 
 // Styles
-import * as S from "./Styled.js";
+import * as S from './Styled.js';
 
 // Content
-import { routes } from "./content";
+import { routes } from './content';
 
 const Navbar = () => {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -16,18 +16,20 @@ const Navbar = () => {
   };
 
   const onCLoseMenu = () => {
-    if ((window.innerWidth <= 600) && (menuVisible === true)) {
+    if (window.innerWidth <= 600 && menuVisible === true) {
       window.scrollTo(0, 0);
       handleClickedMenu();
     }
-  }
+  };
 
-  window.addEventListener("resize", function () {
+  window.addEventListener('resize', function () {
     if (window.innerWidth > 600) setMenuVisible(false);
   });
 
   const Navbar = menuVisible ? S.NavbarMenuActive : S.NavbarMenu;
-  const UnorderedList = menuVisible ? S.MenuUnorderedListActive : S.MenuUnorderedList; 
+  const UnorderedList = menuVisible
+    ? S.MenuUnorderedListActive
+    : S.MenuUnorderedList;
   const NavbarLink = menuVisible ? S.NavbarLinkActive : S.NavbarLink;
 
   return (

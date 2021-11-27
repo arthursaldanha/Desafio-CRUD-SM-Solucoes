@@ -1,4 +1,4 @@
-import * as S from "./Styled.js";
+import * as S from './Styled.js';
 
 const Loading = () => {
   return (

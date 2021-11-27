@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { FiArrowLeft } from "react-icons/fi";
+import styled from 'styled-components';
+import { FiArrowLeft } from 'react-icons/fi';
 
 export const CreateCustomer = styled.div`
   align-items: center;
