@@ -17,6 +17,7 @@ const Navbar = () => {
 
   const onCLoseMenu = () => {
     if ((window.innerWidth <= 600) && (menuVisible === true)) {
+      window.scrollTo(0, 0);
       handleClickedMenu();
     }
   }

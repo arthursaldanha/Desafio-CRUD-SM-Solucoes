@@ -1,7 +1,15 @@
 import styled, { keyframes } from "styled-components";
-import BaseAnimation from "../BaseAnimation/BaseAnimation.js";
 
-export const ContainerLoader = styled.div`
+const IsRotating = keyframes`
+	0% {
+  	transform: rotate(0)
+  }
+	100% {
+  	transform: rotate(360deg)
+  }
+`;
+
+export const Container = styled.div`
   align-items: center;
   background-color: rgba(0, 0, 0, 0.4);
   display: flex;
@@ -14,15 +22,13 @@ export const ContainerLoader = styled.div`
   z-index: 1;
 `;
 
-const IsRotating = keyframes`
-   to {transform: rotate(1turn)}
-`;
-
-export const Loader = styled(BaseAnimation)`
+export const Loader = styled.div`
   animation-name: ${IsRotating};
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
   border-radius: 50%;
-  border-top-color: #3dbee8;
-  border: 6px solid #e5e5e5;
+  border-top-color: #184e77;
+  border: 6px solid #fff;
   height: 80px;
   width: 80px;
 `;
