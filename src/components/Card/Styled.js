@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import { GoPencil } from 'react-icons/go';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { GoPencil } from "react-icons/go";
+import { Link } from "react-router-dom";
 
 export const ContainerCard = styled.div`
   align-items: center;
-  background-color: #1a759f;
+  background-color: #1B232A;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@ export const ContainerCard = styled.div`
 export const ImageCard = styled.div``;
 export const Image = styled.img`
   border-radius: 50%;
-  border: 2px solid #76c893;
+  border: 2px solid #5ED5A8;
   margin-bottom: 10px 0;
 `;
 

@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Navbar = styled.div`
   align-items: center;
-  background-color: #184e77;
+  background-color: #1B232A;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -63,7 +63,7 @@ export const NavbarMenu = styled.nav`
 `;
 
 export const NavbarMenuActive = styled(NavbarMenu)`
-  background-color: #184e77;
+  background-color: #1B232A;
   display: none;
   height: calc(100vh - 80px);
   left: 0;
@@ -99,18 +99,18 @@ export const MenuUnorderedListActive = styled(MenuUnorderedList)`
 `;
 
 export const NavbarLinkActive = styled(NavLink)`
-  border-bottom: 3px solid #184e77;
+  border-bottom: 3px solid #1B232A;
   color: #fff;
   cursor: pointer;
   display: block;
   font-size: 1rem;
   font-weight: 500;
-  padding: 29px 35px;
+  padding: 30px 35px;
   text-decoration: none;
   transition: all 0.3s;
 
   &:hover {
-    border-bottom: 3px solid #fff;
+    border-bottom: 3px solid #5ED5A8;
     color: #b5b9c2;
   }
 

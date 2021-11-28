@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { FiArrowLeft } from 'react-icons/fi';
+import styled from "styled-components";
+import { FiArrowLeft } from "react-icons/fi";
 
 export const CreateCustomer = styled.div`
   align-items: center;
@@ -13,12 +13,13 @@ export const CreateCustomer = styled.div`
 export const ButtonBack = styled.button`
   align-items: center;
   align-self: center;
-  background-color: #42a5f5;
+  background-color: #1B232A;
   border-radius: 6px;
   border: none;
   color: #fff;
   cursor: pointer;
   display: flex;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   justify-content: center;
   margin-top: 5px;

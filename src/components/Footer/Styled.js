@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Footer = styled.footer`
   align-items: center;
-  background-color: #184e77;
+  background-color: #1B232A;
   display: flex;
   justify-content: center;
   min-height: 50px;
@@ -20,10 +20,11 @@ export const TextFooter = styled.p`
 `;
 
 export const NavLink = styled(Link)`
-  color: #45c9a3;
+  color: #5ED5A8;
   text-decoration: none;
+  transition: all 0.5s ease-out;
   &:hover {
-    color: #52b69a;
+    color: #5ED5A8;
     text-decoration: underline;
   }
 `;
