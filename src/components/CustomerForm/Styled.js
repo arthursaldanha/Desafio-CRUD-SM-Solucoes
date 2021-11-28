@@ -46,11 +46,12 @@ export const ERRORMESSAGE = styled(ErrorMessage)`
 
 export const ButtonForm = styled.button`
   align-self: center;
-  background-color: #42a5f5;
+  background-color: #1B232A;
   border-radius: 6px;
   border: none;
   color: #fff;
   cursor: pointer;
+  font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   padding: 15px;
   width: 130px;
