@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import CustomerForm from '../CustomerForm/Form';
 import { useHistory, useParams } from 'react-router-dom';
+
+//Toast
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// Components
+import CustomerForm from '../CustomerForm/Form';
 
 // Styles
 import * as S from './Styled.js';
@@ -23,11 +29,29 @@ const UpdateCustomer = () => {
       .then((response) => {
         if (response.status === 200) {
           history.push('/');
-          alert('Cliente atualizado com sucesso!');
+          toast.success('Usuário atualizado com suscesso!', {
+            position: 'bottom-right',
+            autoClose: 4000,
+            theme: 'colored',
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
         } else {
           Promise.reject();
-          alert('Algo de errado aconteceu! Tente novamente mais tarde!');
           history.push('/');
+          toast.error('Algo deu errado!', {
+            position: 'bottom-right',
+            autoClose: 4000,
+            theme: 'colored',
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
         }
       });
   };

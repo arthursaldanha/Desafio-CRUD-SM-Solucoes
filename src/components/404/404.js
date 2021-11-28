@@ -1,4 +1,3 @@
-import React from 'react'
 import * as S from './Styled.js'
 import logo from '../../assets/images/page_not_found.svg'
 

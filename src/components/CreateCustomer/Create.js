@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import CustomerForm from '../CustomerForm/Form';
 import { useHistory } from 'react-router-dom';
 
+//Toast
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+//Components
+import CustomerForm from '../CustomerForm/Form';
+
+// Styles
 import * as S from './Styled.js';
 
 const CreateCustomer = () => {
@@ -17,10 +24,29 @@ const CreateCustomer = () => {
       .then((response) => {
         if (response.status === 201) {
           history.push('/');
-          alert('Cliente cadastrado com sucesso!');
+          toast.success('Usuário criado com suscesso!', {
+            position: 'bottom-right',
+            autoClose: 4000,
+            theme: 'colored',
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
         } else {
           Promise.reject();
-          alert('Algo de errado aconteceu! Tente novamente mais tarde!');
+          history.push('/');
+          toast.error('Algo deu errado!', {
+            position: 'bottom-right',
+            autoClose: 4000,
+            theme: 'colored',
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
         }
       })
       .catch(() =>
@@ -42,7 +68,6 @@ const CreateCustomer = () => {
         enableReinitialize
       />
       <S.ButtonBack
-        className="button-back"
         onClick={() => {
           history.goBack();
         }}

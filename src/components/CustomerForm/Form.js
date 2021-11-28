@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 // Styles
 import * as S from './Styled.js';
 
-const CustomerForm = ({ firstLabel, secLabel, nameButton, ...restProps }) => {
+const CustomerForm = ({ firstLabel, secLabel, nameButton,...restProps }) => {
   const validationSchema = Yup.object().shape({
     name: Yup.string().required('Este campo é obrigatório!'),
     email: Yup.string()
@@ -40,12 +40,9 @@ const CustomerForm = ({ firstLabel, secLabel, nameButton, ...restProps }) => {
                   name="name"
                   type="text"
                   validate={validateName}
-                  className="form-control"
                 />
                 <S.ERRORMESSAGE
                   name="name"
-                  component="span"
-                  className="input-error"
                 />
               </S.Label>
               <S.Label htmlFor="email">
@@ -54,17 +51,13 @@ const CustomerForm = ({ firstLabel, secLabel, nameButton, ...restProps }) => {
                   name="email"
                   type="text"
                   validate={validateEmail}
-                  className="form-control"
                 />
                 <S.ERRORMESSAGE
                   name="email"
-                  component="span"
-                  className="input-error"
                 />
               </S.Label>
               <S.ButtonForm
                 disabled={!(isValid && dirty)}
-                className="button-form"
                 type="submit"
               >
                 {nameButton}
