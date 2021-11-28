@@ -25,7 +25,7 @@ export const Loader = styled.div`
   animation-iteration-count: infinite;
   border: 6px solid #e5e5e5;
   border-radius: 50%;
-  border-top-color: #184e77;
+  border-top-color: #1B232A;
   height: 80px;
   width: 80px;
 `;

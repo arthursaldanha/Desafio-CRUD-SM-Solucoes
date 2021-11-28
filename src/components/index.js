@@ -6,6 +6,7 @@ import Footer from './Footer/Footer';
 import CustomerForm from './CustomerForm/Form';
 import CreateCustomer from './CreateCustomer/Create';
 import UpdateCustomer from './UpdateCustomer/Update';
+import Page404 from './404/404';
 
 export {
   Navbar,
@@ -16,4 +17,5 @@ export {
   CustomerForm,
   CreateCustomer,
   UpdateCustomer,
+  Page404
 };

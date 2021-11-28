@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Pages
-import { Home, Create, Update } from './pages/index';
+import { Home, Create, Update, PageNotFound } from './pages/index';
 
 // Components
 import { Footer, Navbar } from './components';
@@ -14,6 +14,7 @@ const Routes = () => {
         <Route exact path="/" component={Home} />
         <Route path="/cadastrar-cliente" component={Create} />
         <Route path="/atualizar-cliente/:id" component={Update} />
+        <Route component={PageNotFound}/>
       </Switch>
       <Footer />
     </Router>
